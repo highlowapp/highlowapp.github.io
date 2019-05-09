@@ -35,6 +35,14 @@
     <script src="https://code.jquery.com/jquery.min.js"></script>
     <script>
 
+        let authorCard = document.getElementById("author-card");
+        let authorSubtitle = document.getElementById("author-subtitle");
+
+
+        authorCard.style.display = "none";
+        authorSubtitle.style.display = "none";
+
+
         function getParam(param) {
             let url = window.location.href;
             let paramList = url.split("?")[1] || "";
@@ -80,7 +88,8 @@
                             document.getElementById("author-name").innerHTML = data.name;
                             document.getElementById("author-image").src = "http://storage.googleapis.com/highlow-promotional.appspot.com" + data.image;
 
-
+                            authorCard.style.display = "flex";
+                            authorSubtitle.style.display = "block";
                         }
                     });
 
