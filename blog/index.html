@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>High/Low - Blog</title>
+        <meta charset='utf-8'>
+
+        <link rel="stylesheet" href="../index.css">
+    </head>
+    <body>
+        <div id="nav">
+            <div>
+                <a href="../">Home</a>
+                <a href="../blog">Blog</a>
+                <a href="/contact">Contact</a>
+            </div>
+        </div>
+
+        <div id="main">
+            <div id="container">
+                <h1>Latest Blog Posts</h1>
+
+                <div id="posts">
+                    Loading posts...
+                </div>
+            </div>
+        </div>
+
+
+        <script src="https://code.jquery.com/jquery.min.js"></script>
+        <script>
+
+            function post(id, title, date, content) {
+                const postContent = `
+                    <a href="./view?postId=${id}">
+                    <h2>${title}</h2>
+                    <span>${date}</span>
+                    <p>${content}</p>
+                    </a>
+                `;
+
+                let el = document.createElement("div");
+                el.className = "post";
+                el.innerHTML = postContent;
+
+                return el;
+            }
+
+
+            function loadPosts(){
+
+                var postsElement = document.getElementById("posts");
+
+                $.ajax({
+                    url: "https://us-central1-highlow-promotional.cloudfunctions.net/getPosts",
+                    method: "get",
+                    success:function(result){
+                        postsElement.innerHTML = "";
+                        const posts = JSON.parse(result);
+
+                        for (var i = 0; i < posts.length; i++){
+                            postsElement.appendChild(post(posts[i].id, posts[i].title, posts[i].date, posts[i].content));
+                        }
+                    }
+                });
+
+            }
+
+            loadPosts();
+
+
+
+        </script>
+    </body>
+</html>

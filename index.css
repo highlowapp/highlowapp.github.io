@@ -1,0 +1,376 @@
+html, body {
+    font-family: sans-serif;
+    font-size: 15px;
+    overflow-x: hidden;
+}
+
+#main {
+    position: absolute;
+    background-image: linear-gradient(to bottom right, rgb(221, 15, 59), rgb(248, 102, 34));
+    width: 100%;
+    min-height: 100%;
+    left: 0px;
+    text-align: center;
+}
+
+#container {
+    margin: 5em;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.post {
+    width: 100%;
+    background: white;
+    border-radius: 10px;
+    color: black;
+    text-align: left;
+    padding: 1em;
+    margin-top: 2em;
+}
+
+.post span {
+    color: gray;
+}
+
+.post a {
+    text-decoration: none;
+    color: black;
+}
+
+.contact-form {
+    width: 100%;
+    background: white;
+    border-radius: 10px;
+    color: black;
+    text-align: left;
+    padding: 1em;
+    margin-top: 2em;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form label {
+    font-size: 1.5em;
+    margin-left: 1em;
+    margin-top: 1em;
+}
+.contact-form input, textarea {
+    font-size: 1.5em;
+    margin: 1em;
+    border: solid lightgray 3px;
+    border-radius: 10px;
+    padding: 0.5em;
+}
+
+.contact-form input:hover {
+    outline: none;
+}
+
+.contact-form button {
+    background: rgb(248, 102, 34);
+    color: white;
+    padding: 1em;
+    width: 20%;
+    margin: 2em;
+    border: none;
+    border-radius: 10px;
+    font-size: 1em;
+}
+
+.contact-form button:hover {
+    background: rgb(228, 82, 14);
+    cursor: pointer;
+}
+
+.contact-form button:focus {
+    background: rgb(208, 62, 0);
+    outline: none;
+}
+
+#banner {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to bottom right, rgb(221, 15, 59), rgb(248, 102, 34));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#heading {
+    text-align: center;
+    color: white;
+}
+
+#heading img {
+    width: 200px;
+}
+
+#main-content {
+    position: absolute;
+    top: 100%;
+    left: 0px;
+}
+
+#nav {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    color: black;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    padding: 1em;
+    background-color: white;
+    z-index: 3;
+}
+
+
+#nav a {
+    text-align: center;
+    color: rgb(221, 15, 59);
+    font-size: 1.3em;
+    margin-left: 2em;
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+#nav a:hover {
+    text-decoration: none;
+    color: rgb(248, 102, 34);
+}
+
+#subscribe {
+    position: relative;
+    width: 100%;
+    justify-content: center;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#subscribe .form-container {
+    padding: 0.5em;
+    width: 80%;
+    height: 20%;
+}
+
+#subscribe input {
+    width: 70%;
+    padding: 0.5em;
+    font-size: 20px;
+    border: lightgray solid 3px;
+    border-right: none;
+    border-radius: 10px 0px 0px 10px;
+}
+
+#subscribe input::placeholder {
+    color: rgb(200, 200, 200);
+}
+
+#subscribe input:focus {
+    outline: none;
+}
+
+#subscribe button {
+    border: none;
+    border-radius: 0px 10px 10px 0px;
+    padding: 0.5em;
+    background-color: rgb(248, 102, 34);
+    width: 20%;
+    color: white;
+    font-size: 20px;
+    border: rgb(248, 102, 34) solid 3px;
+    transition: 0.3s;
+}
+
+#subscribe button:hover {
+    background-color: rgb(228, 82, 14);
+    border: rgb(228, 82, 14) solid 3px;
+    cursor: pointer;
+}
+
+#subscribe button:focus {
+    background-color: rgb(208, 62, 0);
+    border: rgb(208, 62, 0) solid 3px;
+    outline: none;
+}
+
+#about {
+    padding-top: 1em;
+    padding-bottom: 1em;
+    width: 100%;
+    color: white;
+    background-image: linear-gradient(to bottom right, rgb(248, 102, 34), rgb(221, 15, 59));
+}
+
+#about-inset {
+    margin: 2em;
+    background: white;
+    color: black;
+    padding: 1em;
+    border-radius: 10px;
+}
+
+#about h1 {
+    width: 100%;
+    text-align: center;
+}
+
+#about p {
+    margin: 2em;
+    line-height: 2em;
+}
+
+
+#support {
+    width: 100%;
+    text-align: center;
+}
+
+#support h1 {
+    width: 100%;
+    text-align: center;
+}
+
+#support p {
+    margin: 2em;
+    line-height: 2em;
+    text-align: center;
+    font-size: 20px;
+}
+
+
+.fa-github {
+    font-size: 10em;
+    transition: 0.3s;
+    color: rgb(60, 60, 60);
+}
+
+.fa-github:hover {
+    cursor: pointer;
+    color: rgb(20, 20, 20);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.social {
+    margin: 0;
+    padding: 0;
+}
+
+.social ul {
+    margin: 0;
+    padding: 5px;
+}
+
+.social ul li {
+    margin: 5px;
+    list-style: none outside none;
+    display: inline-block;
+}
+
+.social i {
+    width: 40px;
+    height: 40px;
+    color: #FFF;
+    background-color: #909AA0;
+    font-size: 22px;
+    text-align:center;
+    padding-top: 12px;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -o-border-radius: 50%;
+    transition: all ease 0.3s;
+    -moz-transition: all ease 0.3s;
+    -webkit-transition: all ease 0.3s;
+    -o-transition: all ease 0.3s;
+    -ms-transition: all ease 0.3s;
+}
+
+.social i:hover {
+    color: #FFF;
+    text-decoration: none;
+    transition: all ease 0.3s;
+    -moz-transition: all ease 0.3s;
+    -webkit-transition: all ease 0.3s;
+    -o-transition: all ease 0.3s;
+    -ms-transition: all ease 0.3s;
+}
+
+
+.social .fa-github:hover { /* round github icon*/
+    background: #343434;
+}
+
+
+
+
+
+
+
+
+
+#wrapper {
+    width: 100%;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    margin: 1em;
+}
+
+#date {
+    color: gray;
+    margin-bottom: 1em;
+}
+
+#author-card {
+    margin-top: 1em;
+    margin-bottom: 2px;
+    display: flex;
+    flex-direction: row;
+}
+
+#author-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    background-image: linear-gradient(to bottom right, rgb(221, 15, 59), rgb(248, 102, 34));
+    padding: 2px;
+}
+#author-name {
+    margin-left: 10px;
+}
+
+#nav.dark {
+    background-image: linear-gradient(to bottom right, rgb(221, 15, 59), rgb(248, 102, 34));
+}
+
+#nav.dark a {
+    color: white;
+}

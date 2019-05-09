@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>High/Low - Connection through Reflection</title>
+        <meta charset='utf-8'>
+
+        <link rel="shortcut icon" href="favicon.ico">"
+        <!--Load Bootstrap css-->
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+        <!--load font awesome-->
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+
+        <div id="banner">
+            <div id="nav">
+                <div>
+                    <a href="#">Home</a>
+                    <a href="/blog">Blog</a>
+                    <a href="/contact">Contact</a>
+                </div>
+            </div>
+
+            <div id="heading">
+                <img src='assets/logo-white.png'>
+                <h1>High/Low</h1>
+                <h3>Connection through Reflection</h3>
+            </div>
+
+        </div>
+
+        <div id="main-content">
+
+            <div id="subscribe">
+                <h3>Subscribe to our blog for progress updates!</h3>
+                <div class='form-container'>
+                    <input id="email" placeholder="Enter your email"><button id="subscribe_button" onclick="subscribe();">Sign Up</button>
+                </div>
+            </div>
+
+            <div id="about">
+
+                <h1>About</h1>
+
+                <div id="about-inset">
+                    <p><i>The day starts. You get dressed, hop in the car and drive to work. You leave at 4 P.M. in the afternoon, then get back in the car and sit through rush hour traffic. You make a quick dinner, get in bed, and catch a few precious hours of sleep before you have to do it all over again...</i></p>
+                    <p>That's just a normal day for a lot of people. It's easy to get into what we call <b>The Eeyore mindset</b>: It's just another gloomy day, after all...</p>
+                    <p><b>But here at High/Low, we believe every day has something special to offer.</b> It just takes a little reflection!</p>
+                    <p>High/Low is an app that encourages you to reflect on every day by thinking about your most favorite and your least favorite thing that happened – a.k.a., your “High” and your “Low”.</p>
+                    <p>Not only can High/Low help you find meaning in every day, it can also help you to stay engaged with the people you love most. With High/Low, you can follow friends and see their Highs and Lows. You'll get to know them better every day! <b><i>Take that, Eeyore!</i></b></p>
+                </div>
+            </div>
+
+
+            <div id="support">
+                <h1>Want to support us?</h1>
+                <p>Feel free to star us on GitHub or follow our blog!</p>
+                <a href="https://github.com/highlowapp"><i class="fa fa-lg fa-github"></i></a>
+                <p>Want to do even more? Share this website with your friends: <a href="https://gethighlow.com">https://gethighlow.com</a></p>
+
+            </div>
+
+        </div>
+
+
+        <script src="https://code.jquery.com/jquery.min.js"></script>
+        <script>
+
+            function subscribe(){
+                var email = document.getElementById("email").value;
+
+                if (email.indexOf("@") > -1 && email.indexOf(".") > -1){
+                    $.ajax({
+                        url: "https://us-central1-highlow-promotional.cloudfunctions.net/subscribe?email=" + document.getElementById("email").value,
+                        method: "get",
+                        success:function(){
+                            alert("Successfully subscribed!");
+                        }
+                    });
+                }
+            }
+
+
+
+        </script>
+    </body>
+</html>

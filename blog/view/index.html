@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>High/Low - View Post</title>
+    <meta charset='utf-8'>
+
+    <link rel="stylesheet" href="../../index.css">
+</head>
+<body>
+
+    <div id="nav" class="dark">
+        <div>
+            <a href="../../">Home</a>
+            <a href="../">Blog</a>
+            <a href="../../contact">Contact</a>
+        </div>
+    </div>
+
+
+    <div id="wrapper">
+        <h1 id="post_title"></h1>
+        <span id="author-subtitle">Written by</span>
+        <div id="author-card">
+
+            <img src="" id="author-image">
+            <h3 id="author-name"></h3>
+        </div>
+        <span id="date"></span>
+        <div id="body">
+
+        </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery.min.js"></script>
+    <script>
+
+        function getParam(param) {
+            let url = window.location.href;
+            let paramList = url.split("?")[1] || "";
+
+            let params = paramList.split("&");
+
+            let paramObj = {};
+
+            for (var i = 0; i < params.length; i++){
+                const param_components = params[i].split("=");
+                paramObj[ param_components[0] ] = param_components[1];
+            }
+
+            return paramObj[param];
+        }
+
+        function loadPost() {
+            const post_id = getParam("postId");
+
+            $.ajax({
+                url: "https://us-central1-highlow-promotional.cloudfunctions.net/getPost?postId=" + post_id,
+                method: 'get',
+                success: function(result) {
+                    const data = JSON.parse(result);
+
+                    document.getElementById("post_title").innerHTML = data.title;
+                    document.getElementById("date").innerHTML = data.date;
+                    document.getElementById("body").innerHTML = data.content;
+
+                    const authorId = data.author;
+
+                    console.log(authorId);
+
+                    $.ajax({
+                        url: "https://us-central1-highlow-promotional.cloudfunctions.net/getAuthor?authorId=" + authorId,
+                        method: "get",
+                        success: function(result) {
+
+                            console.log(result);
+
+                            const data = JSON.parse(result);
+
+                            document.getElementById("author-name").innerHTML = data.name;
+                            document.getElementById("author-image").src = "http://storage.googleapis.com/highlow-promotional.appspot.com" + data.image;
+
+
+                        }
+                    });
+
+
+                }
+            });
+        }
+
+        loadPost();
+
+    </script>
+</body>
+</html>

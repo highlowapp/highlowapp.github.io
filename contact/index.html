@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>High/Low - Blog</title>
+        <meta charset='utf-8'>
+
+        <link rel="stylesheet" href="../index.css">
+    </head>
+    <body>
+        <div id="nav">
+            <div>
+                <a href="../">Home</a>
+                <a href="../blog">Blog</a>
+                <a href="../contact">Contact</a>
+            </div>
+        </div>
+
+        <div id="main">
+            <div id="container">
+                <h1>Contact us</h1>
+
+                <div class="contact-form">
+                    <label for="firstname">First Name</label>
+                    <input placeholder="First Name" name="firstname" id="firstname">
+
+                    <label for="lastname">Last Name</label>
+                    <input placeholder="Last Name" name="lastname" id="lastname">
+
+                    <label for="email">Email</label>
+                    <input placeholder="Email" name="email" id="email">
+
+                    <label for="message">Message</label>
+                    <textarea id="message" placeholder="Message..."></textarea>
+
+                    <button onClick="sendContactForm()">Submit</button>
+                </div>
+
+            </div>
+        </div>
+
+
+        <script src="https://code.jquery.com/jquery.min.js"></script>
+
+        <script>
+
+            function sendContactForm(){
+                document.getElementsByClassName('contact-form')[0].innerHTML = "Sending message...";
+
+                $.ajax({
+                    url: "https://us-central1-highlow-promotional.cloudfunctions.net/sendContactForm",
+                    method: "post",
+                    data: {
+                        firstname: document.getElementById("firstname").value,
+                        lastname: document.getElementById("lastname").value,
+                        email: document.getElementById("email").value,
+                        message: document.getElementById("message").value
+                    },
+
+                    success: function(result) {
+                        document.getElementsByClassName('contact-form')[0].innerHTML = "Your message has been sent!";
+                    },
+
+                    error: function(result) {
+                        document.getElementsByClassName('contact-form')[0].innerHTML = "An error occurred. Please reload and try again.";
+                    }
+                });
+
+            }
+
+        </script>
+    </body>
+</html>
