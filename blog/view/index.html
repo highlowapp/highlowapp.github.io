@@ -61,6 +61,10 @@
 
         function loadPost() {
             const post_id = getParam("postId");
+		
+
+            document.getElementById("post_title").innerHTML = "Loading...";
+
 
             $.ajax({
                 url: "https://us-central1-highlow-promotional.cloudfunctions.net/getPost?postId=" + post_id,
