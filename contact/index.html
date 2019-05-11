@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>High/Low - Blog</title>
+        <title>High/Low - Contact</title>
         <meta charset='utf-8'>
         <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
         <link rel="stylesheet" href="../index.css">
@@ -44,16 +44,22 @@
         <script>
 
             function sendContactForm(){
+
+                const firstname = document.getElementById("firstname").value;
+                const lastname = document.getElementById("lastname").value;
+                const email = document.getElementById("email").value;
+                const message = document.getElementById("message").value;
+
                 document.getElementsByClassName('contact-form')[0].innerHTML = "Sending message...";
 
                 $.ajax({
                     url: "https://us-central1-highlow-promotional.cloudfunctions.net/sendContactForm",
                     method: "post",
                     data: {
-                        firstname: document.getElementById("firstname").value,
-                        lastname: document.getElementById("lastname").value,
-                        email: document.getElementById("email").value,
-                        message: document.getElementById("message").value
+                        firstname: firstname,
+                        lastname: lastname,
+                        email: email,
+                        message: message
                     },
 
                     success: function(result) {
