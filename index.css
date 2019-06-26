@@ -379,14 +379,16 @@ html, body {
 
 
 #wrapper {
-    width: 100%;
-    position: absolute;
-    left: 0px;
-    top: 0px;
+    width: 70%;
     padding: 2em;
     display: flex;
     flex-direction: column;
+    align-items: center;
     margin: 1em;
+}
+
+#post_title {
+    text-align: center;
 }
 
 #date {
@@ -398,18 +400,19 @@ html, body {
     margin-top: 1em;
     margin-bottom: 2px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    align-items: center;
 }
 
 #author-image {
-    width: 50px;
-    height: 50px;
+    width: 80px;
+    height: 80px;
     border-radius: 100%;
     background-image: linear-gradient(to bottom right, rgb(221, 15, 59), rgb(248, 102, 34));
     padding: 2px;
 }
 #author-name {
-    margin-left: 10px;
+
 }
 
 #nav.dark {
