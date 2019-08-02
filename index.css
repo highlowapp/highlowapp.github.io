@@ -411,9 +411,6 @@ html, body {
     background-image: linear-gradient(to bottom right, rgb(221, 15, 59), rgb(248, 102, 34));
     padding: 2px;
 }
-#author-name {
-
-}
 
 #nav.dark {
     background-image: linear-gradient(to bottom right, rgb(221, 15, 59), rgb(248, 102, 34));
