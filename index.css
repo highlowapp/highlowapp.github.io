@@ -357,7 +357,6 @@ html, body {
 }
 
 .team-member img {
-    width: 100px;
     height: 100px;
     border-radius: 100%;
     background-image: linear-gradient(to bottom right, #dd0f3b, #f86622);
