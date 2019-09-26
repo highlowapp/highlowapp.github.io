@@ -362,7 +362,7 @@ html, body {
     border-radius: 100%;
     background-image: linear-gradient(to bottom right, #dd0f3b, #f86622);
     padding: 2px;
-    object-fit: contain;
+    object-fit: cover;
 }
 
 .team-member p {
