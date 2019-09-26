@@ -405,7 +405,7 @@ html, body {
 }
 
 #author-image {
-    width: 80px;
+    object-fit: cover;
     height: 80px;
     border-radius: 100%;
     background-image: linear-gradient(to bottom right, #dd0f3b, #f86622);
