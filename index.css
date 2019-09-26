@@ -6,7 +6,7 @@ html, body {
 
 #main {
     position: absolute;
-    background-image: linear-gradient(to bottom right, rgb(221, 15, 59), rgb(248, 102, 34));
+    background-image: linear-gradient(to bottom right, #d83b4f, #f99262);
     width: 100%;
     min-height: 100%;
     left: 0px;
@@ -70,7 +70,7 @@ html, body {
 }
 
 .contact-form button {
-    background: rgb(248, 102, 34);
+    background: #f99262;
     color: white;
     padding: 1em;
     width: 20%;
@@ -81,12 +81,12 @@ html, body {
 }
 
 .contact-form button:hover {
-    background: rgb(228, 82, 14);
+    background: #e77a47;
     cursor: pointer;
 }
 
 .contact-form button:focus {
-    background: rgb(208, 62, 0);
+    background: #f95000;
     outline: none;
 }
 
@@ -96,7 +96,7 @@ html, body {
     top: 0px;
     width: 100%;
     height: 100%;
-    background-image: linear-gradient(to bottom right, rgb(221, 15, 59), rgb(248, 102, 34));
+    background-image: linear-gradient(to bottom right, #d83b4f, #f99262);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -134,7 +134,7 @@ html, body {
 
 #nav a {
     text-align: center;
-    color: rgb(221, 15, 59);
+    color: #dd0f3b;
     font-size: 1.3em;
     margin-left: 2em;
     transition: 0.3s;
@@ -143,7 +143,7 @@ html, body {
 
 #nav a:hover {
     text-decoration: none;
-    color: rgb(248, 102, 34);
+    color: #f86622;
 }
 
 #subscribe {
@@ -172,7 +172,7 @@ html, body {
 }
 
 #subscribe input::placeholder {
-    color: rgb(200, 200, 200);
+    color: #c8c8c8;
 }
 
 #subscribe input:focus {
@@ -183,23 +183,23 @@ html, body {
     border: none;
     border-radius: 0px 10px 10px 0px;
     padding: 0.5em;
-    background-color: rgb(248, 102, 34);
+    background-color: #f86622;
     width: 20%;
     color: white;
     font-size: 20px;
-    border: rgb(248, 102, 34) solid 3px;
+    border: #f86622 solid 3px;
     transition: 0.3s;
 }
 
 #subscribe button:hover {
-    background-color: rgb(228, 82, 14);
-    border: rgb(228, 82, 14) solid 3px;
+    background-color: #e4520e;
+    border: #e4520e solid 3px;
     cursor: pointer;
 }
 
 #subscribe button:focus {
-    background-color: rgb(208, 62, 0);
-    border: rgb(208, 62, 0) solid 3px;
+    background-color: #d03e00;
+    border: #d03e00 solid 3px;
     outline: none;
 }
 
@@ -208,7 +208,7 @@ html, body {
     padding-bottom: 1em;
     width: 100%;
     color: white;
-    background-image: linear-gradient(to bottom right, rgb(248, 102, 34), rgb(221, 15, 59));
+    background-image: linear-gradient(to bottom right, #f86622, #dd0f3b);
 }
 
 #about-inset {
@@ -233,7 +233,7 @@ html, body {
 #support {
     width: 100%;
     text-align: center;
-    background-image: linear-gradient(to bottom right, rgb(248, 102, 34), rgb(221, 15, 59));
+    background-image: linear-gradient(to bottom right, #f86622, #dd0f3b);
     padding: 1em;
 }
 
@@ -260,7 +260,7 @@ html, body {
 
 .fa-github:hover {
     cursor: pointer;
-    color: rgb(200, 200, 200);
+    color: #c8c8c8;
 }
 
 
@@ -360,12 +360,12 @@ html, body {
     width: 100px;
     height: 100px;
     border-radius: 100%;
-    background-image: linear-gradient(to bottom right, rgb(221, 15, 59), rgb(248, 102, 34));
+    background-image: linear-gradient(to bottom right, #dd0f3b, #f86622);
     padding: 2px;
 }
 
 .team-member p {
-    color: rgb(150, 150, 150);
+    color: #969696;
     font-size: 15px;
 }
 
@@ -408,7 +408,7 @@ html, body {
     width: 80px;
     height: 80px;
     border-radius: 100%;
-    background-image: linear-gradient(to bottom right, rgb(221, 15, 59), rgb(248, 102, 34));
+    background-image: linear-gradient(to bottom right, #dd0f3b, #f86622);
     padding: 2px;
 }
 #author-name {
@@ -416,7 +416,7 @@ html, body {
 }
 
 #nav.dark {
-    background-image: linear-gradient(to bottom right, rgb(221, 15, 59), rgb(248, 102, 34));
+    background-image: linear-gradient(to bottom right, #dd0f3b, #f86622);
 }
 
 #nav.dark a {
