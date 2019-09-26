@@ -356,12 +356,14 @@ html, body {
     margin: 1em;
 }
 
-.team-member img {
+.team-member .image {
+    width: 100px;
     height: 100px;
     border-radius: 100%;
-    background-image: linear-gradient(to bottom right, #dd0f3b, #f86622);
+    /*background-image: linear-gradient(to bottom right, #dd0f3b, #f86622);*/
     padding: 2px;
-    object-fit: cover;
+    background-image: url('assets/brayden.jpg');
+    background-size: cover;
 }
 
 .team-member p {
