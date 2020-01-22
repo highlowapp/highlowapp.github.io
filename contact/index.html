@@ -1,98 +1,158 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
-        <title>High/Low - Contact</title>
-        <meta charset='utf-8'>
-        <meta name="apple-itunes-app" content="app-id=1495271870">
-        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-        <link rel="stylesheet" href="../index.css">
+        <title>High/Low - Connection Through Reflection</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../bootstrap.min.css">
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
+        <style>
 
-	<meta name="title" content="High/Low - Contact"/>
-        <meta name="description" content="Contact the High/Low team"/>
+            #nav-logo {
+                width: 2em;
+            }
+
+            body {
+                background-image: linear-gradient(to bottom right, #FB2A57, #FA9C1D);
+                background-repeat: no-repeat;
+                background-size: cover;
+                text-align: center;
+                min-height: 100vh;
+            }
+
+            #contact-form {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin-top: 20px;
+            }
+
+            form {
+                padding: 2em;
+                width: 50%;
+                text-align: left;
+                color: rgb(98, 98, 105);
+            }
+
+            
+
+            @media only screen and (max-width: 800px) {
+                form {
+                    width: 100%;
+                }
+            }
+        </style>
+    
+        <meta name="title" content="High/Low - Home"/>
+        <meta name="description" content="High/Low is an app that helps you find meaning and purpose in every day!"/>
         <meta name="robots" content="index,follow"/>
-
+        <meta name="apple-itunes-app" content="app-id=1495271870">
+        
     </head>
-    <!--Start of Tawk.to Script-->
-    <script type="text/javascript">
-    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-    (function(){
-    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-    s1.async=true;
-    s1.src='https://embed.tawk.to/5d31e08e9b94cd38bbe849b3/default';
-    s1.charset='UTF-8';
-    s1.setAttribute('crossorigin','*');
-    s0.parentNode.insertBefore(s1,s0);
-    })();
-    </script>
-    <!--End of Tawk.to Script-->
     <body>
-        <div id="nav">
-            <div>
-                <a href="../index.html">Home</a>
-                <a href="../blog/index.html">Blog</a>
-                <a href="../contact/index.html">Contact</a>
-            </div>
-        </div>
 
-        <div id="main">
-            <div id="container">
-                <h1>Contact us</h1>
+        <!--Start of Tawk.to Script-->
+        <script type="text/javascript">
+        var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+        (function(){
+        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+        s1.async=true;
+        s1.src='https://embed.tawk.to/5d31e08e9b94cd38bbe849b3/default';
+        s1.charset='UTF-8';
+        s1.setAttribute('crossorigin','*');
+        s0.parentNode.insertBefore(s1,s0);
+        })();
+        </script>
+        <!--End of Tawk.to Script-->
 
-                <div class="contact-form">
-                    <label for="firstname">First Name</label>
-                    <input placeholder="First Name" name="firstname" id="firstname">
+        <nav class='navbar navbar-expand-lg navbar-light navbar-fixed-top' style='background-color: white;'>
+            <a class='navbar-brand' href='https://gethighlow.com'>
+                <img src='../assets/Logo-light.png' id='nav-logo'>
+            </a>
 
-                    <label for="lastname">Last Name</label>
-                    <input placeholder="Last Name" name="lastname" id="lastname">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-                    <label for="email">Email</label>
-                    <input placeholder="Email" name="email" id="email">
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav mr-auto">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../">Home</a>
+                  </li>
+                  <li class="nav-item active">
+                    <a class="nav-link" href="./">Contact <span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" target='_blank' href="https://blog.gethighlow.com">Blog</a>
+                  </li>
+                </ul>
+              </div>
+        </nav>
 
-                    <label for="message">Message</label>
-                    <textarea id="message" placeholder="Message..."></textarea>
 
-                    <button onClick="sendContactForm()">Submit</button>
+        <div id='contact-form'>
+            <form class='card' id='realform'>
+                <h2>Thanks for contacting us!</h2>
+                <p>Just fill out the form below and we'll get back to you ASAP</p>
+                <div class='form-group'>
+                    <label for='fname'>First Name</label>
+                    <input id='fname' class='form-control'>
                 </div>
-
-            </div>
+                <div class='form-group'>
+                    <label for='lname'>Last Name</label>
+                    <input id='lname' class='form-control'>
+                </div>
+                <div class='form-group'>
+                    <label for='email'>Email</label>
+                    <input id='email' class='form-control'>
+                </div>
+                <div class='form-group'>
+                    <label for='message'>Message</label>
+                    <textarea id='message' class='form-control' rows="3"></textarea>
+                </div>
+                <div class='form-group'>
+                    <input type='submit' class='btn btn-primary'>
+                </div>
+            </form>
         </div>
-
-
-        <script src="https://code.jquery.com/jquery.min.js"></script>
-
+        <script src='https://code.jquery.com/jquery.min.js'></script>
         <script>
+            const form = document.getElementById('realform')
+            const fname = document.getElementById('fname')
+            const lname = document.getElementById('lname')
+            const email = document.getElementById('email')
+            const message = document.getElementById('message')
 
-            function sendContactForm(){
+            form.onsubmit = function(e) {
+                e.preventDefault();
 
-                const firstname = document.getElementById("firstname").value;
-                const lastname = document.getElementById("lastname").value;
-                const email = document.getElementById("email").value;
-                const message = document.getElementById("message").value;
-
-                document.getElementsByClassName('contact-form')[0].innerHTML = "Sending message...";
+                form.innerHTML = 'Sending message...'
 
                 $.ajax({
                     url: "https://us-central1-highlow-promotional.cloudfunctions.net/sendContactForm",
                     method: "post",
                     data: {
-                        firstname: firstname,
-                        lastname: lastname,
-                        email: email,
-                        message: message
+                        firstname: fname.value,
+                        lastname: lname.value,
+                        email: email.value,
+                        message: message.value
                     },
 
                     success: function(result) {
-                        document.getElementsByClassName('contact-form')[0].innerHTML = "Your message has been sent!";
+                        form.innerHTML = "Your message has been sent!";
                     },
 
                     error: function(result) {
-                        document.getElementsByClassName('contact-form')[0].innerHTML = "An error occurred. Please reload and try again.";
+                        form.innerHTML = "An error occurred. Please reload and try again.";
                     }
                 });
-
             }
-
         </script>
     </body>
 </html>

@@ -1,184 +1,339 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
-        <title>High/Low - Connection through Reflection</title>
-        <meta charset='utf-8'>
-        <meta name="apple-itunes-app" content="app-id=1495271870">
-
-        <link rel="shortcut icon" href="favicon.ico">"
-        <!--Load Bootstrap css-->
-        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
-        <!--load font awesome-->
+        <title>High/Low - Connection Through Reflection</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="./bootstrap.min.css">
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
-        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-
-        <link rel="stylesheet" href="index.css">
-
         <style>
+            #nav-logo {
+                width: 2em;
+            }
+
+            #banner {
+                position: absolute;
+                background-image: linear-gradient(to bottom right, #FB2A57, #FA9C1D);
+                width: 100%;
+                height: 90%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                color: white;
+            }
+
+            #banner img {
+                width: 150px;
+            }
+
+            #about {
+                text-align: center;
+                width: 100%;
+                margin-top: 90vh;
+                padding-left: 25%;
+                padding-right: 25%;
+                padding-top: 50px;
+            }
+
+            #about-content {
+                margin-top: 1em;
+                font-size: 20px;
+                text-align: left;
+                line-height: 40px;
+                color: rgb(98, 98, 105);
+            }
+            
+
             #video-container {
                 width: 100%;
                 text-align: center;
             }
-        </style>
 
+            #why {
+                width: 100%;
+                background-image: linear-gradient(to bottom right, #FB2A57, #FA9C1D);
+                text-align: center;
+                border-top: 15px solid rgb(240, 240, 240);
+                border-bottom: 15px solid rgb(240, 240, 240);
+                display: flex;
+                flex-direction: row;
+            }
 
-	<meta name="title" content="High/Low - Home"/>
-	<meta name="description" content="High/Low is an app that helps you find meaning and purpose in every day!"/>
-	<meta name="robots" content="index,follow"/>
-    </head>
-    <!--Start of Tawk.to Script-->
-    <script type="text/javascript">
-    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-    (function(){
-    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-    s1.async=true;
-    s1.src='https://embed.tawk.to/5d31e08e9b94cd38bbe849b3/default';
-    s1.charset='UTF-8';
-    s1.setAttribute('crossorigin','*');
-    s0.parentNode.insertBefore(s1,s0);
-    })();
-    </script>
-    <!--End of Tawk.to Script-->
-    <body>
+            #why-cont {
+                float: left;
+                height: 100%;
+                width: 50%;
+                margin: auto;
+                padding: 20px;
+                text-align: center;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
 
-        <div id="banner">
-            <div id="nav">
-                <div>
-                    <a href="#">Home</a>
-                    <a href="./blog/index.html">Blog</a>
-                    <a href="./contact/index.html">Contact</a>
-                </div>
-            </div>
+            #why-content p {
+                width: 75%;
+                margin-left: auto;
+                margin-right: auto;
+                font-size: 20px;
+                line-height: 40px;
+                text-align: left;
+            }
 
-            <div id="heading">
-                <img src='assets/logo-white.png'>
-                <h1>High/Low</h1>
-                <h3>Connection through Reflection</h3>
-                <a href="https://apps.apple.com/us/app/high-low-reflect-each-day/id1495271870?mt=8" style="display:inline-block;overflow:hidden;background:url(https://linkmaker.itunes.apple.com/en-us/badge-lrg.svg?releaseDate=2020-01-20&kind=iossoftware&bubble=ios_apps) no-repeat;width:135px;height:40px;"></a>
-            </div>
+            #why-cont img {
+                width: 100%;
+                margin-bottom: 20px;
+                border-radius: 10px;
+            }
 
-        </div>
-
-        <div id="main-content">
-
-            <div id="subscribe">
-                <h3>Subscribe to our blog for progress updates!</h3>
-                <!-- Begin Mailchimp Signup Form -->
-                <link href="https://cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css">
-                <style type="text/css">
-                    #mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; width: 40%;text-align:center;}
-                    #mc_embed_signup form {text-align: center;}
-                    .mc-field-group {
-                        text-align: left;
-                    }
-                    /* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
-                       We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
-                </style>
-                <div id="mc_embed_signup">
-                    <form action="https://gmail.us20.list-manage.com/subscribe/post?u=e0ca1ef31f69be5a5e592e741&amp;id=3cabc026bf" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-                        <div id="mc_embed_signup_scroll">
-                            <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
-                            <div class="mc-field-group">
-                            <label for="mce-EMAIL">Email Address  <span class="asterisk">*</span>
-                            </label>
-                            <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
-                        </div>
-                        <div class="mc-field-group">
-                            <label for="mce-FNAME">First Name </label>
-                            <input type="text" value="" name="FNAME" class="" id="mce-FNAME">
-                        </div>
-                        <div class="mc-field-group">
-                            <label for="mce-LNAME">Last Name </label>
-                            <input type="text" value="" name="LNAME" class="" id="mce-LNAME">
-                        </div>
-                        <div id="mce-responses" class="clear">
-                            <div class="response" id="mce-error-response" style="display:none"></div>
-                            <div class="response" id="mce-success-response" style="display:none"></div>
-                        </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-                        <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_e0ca1ef31f69be5a5e592e741_3cabc026bf" tabindex="-1" value=""></div>
-                        <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe"  style="background-color: #FB2A57; color: white;" class="button" ></div>
-                        </div>
-                    </form>
-                </div>
-
-                <!--End mc_embed_signup-->
-            </div>
-
-            <div id="about">
-
-                <h1>About</h1>
-
-                <div id="about-inset">
-                    <div id="video-container">
-                        <iframe src="https://player.vimeo.com/video/385701257" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-                    </div>
-                    <p><i>The day starts. You get dressed, hop in the car and drive to work. You leave at 4 P.M. in the afternoon, then get back in the car and sit through rush hour traffic. You make a quick dinner, get in bed, and catch a few precious hours of sleep before you have to do it all over again...</i></p>
-                    <p>That's just a normal day for a lot of people. It's easy to get into what we call <b>The Eeyore mindset</b>: It's just another gloomy day, after all...</p>
-                    <p><b>But here at High/Low, we believe every day has something special to offer.</b> It just takes a little reflection!</p>
-                    <p>High/Low is an app that encourages you to reflect on every day by thinking about your most favorite and your least favorite thing that happened – a.k.a., your “High” and your “Low”.</p>
-                    <p>Not only can High/Low help you find meaning in every day, it can also help you to stay engaged with the people you love most. With High/Low, you can follow friends and see their Highs and Lows. You'll get to know them better every day! <b><i>Take that, Eeyore!</i></b></p>
-                </div>
-            </div>
-
-            <div id="team">
-                <h1>Meet The Team</h1>
-
-                <div id="team-wrapper">
-
-                    <div class="team-member">
-                        <img src="assets/caleb.jpg">
-                        <h3>Caleb Hester</h3>
-                        <p>Senior Software Engineer<br>(Frontend, Backend)</p>
-                    </div>
-
-                    <div class="team-member">
-                        <img src="assets/sam.JPG">
-                        <h3>Samuel Bever</h3>
-                        <p>Software Engineer, Marketing<br>(Frontend)</p>
-                    </div>
-
-                    <div class="team-member">
-                        <img src="assets/7E72B8F5-C84A-42A2-B891-B524AFB97D6E.jpeg">
-                        <h3>Emma Hester</h3>
-                        <p>Graphic Designer<br>(Logos and promotional content)</p>
-                    </div>
-
-                </div>
-            </div>
-
-
-
-            <div id="support">
-                <h1>Want to support us?</h1>
-                <p>Feel free to star us on GitHub or follow our blog!</p>
-                <br><a href="https://github.com/highlowapp"><i class="fa fa-lg fa-github"></i></a>
-                <p>Want to do even more? Share this website with your friends: <a href="https://gethighlow.com">https://gethighlow.com</a></p>
-
-            </div>
-
-        </div>
-
-
-        <script src="https://code.jquery.com/jquery.min.js"></script>
-        <script>
-
-            function subscribe(){
-                var email = document.getElementById("email").value;
-
-                if (email.indexOf("@") > -1 && email.indexOf(".") > -1){
-                    $.ajax({
-                        url: "https://us-central1-highlow-promotional.cloudfunctions.net/subscribe?email=" + document.getElementById("email").value,
-                        method: "get",
-                        success:function(){
-                            alert("Successfully subscribed!");
-                        }
-                    });
-                }
+            #why-content {
+                float: left;
+                background-color: white;
+                width: 50%;
+                bottom: 0px;
+                color: rgb(98, 98, 105);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
             }
 
 
 
+
+
+            #team {
+                text-align: center;
+                width: 100%;
+                margin-top: 50px;
+                color: rgb(98, 98, 105);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+            }
+
+            #team-wrapper {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .team-member {
+                margin: 1em;
+            }
+
+            .team-member img {
+                width: 100px;
+                height: 100px;
+                border-radius: 100%;
+                background-image: linear-gradient(to bottom right, #dd0f3b, #f86622);
+                padding: 2px;
+            }
+
+            .team-member p {
+                color: #969696;
+                font-size: 15px;
+            }
+
+            #support {
+                width: 100%;
+                text-align: center;
+                background-image: linear-gradient(to bottom right, #f86622, #dd0f3b);
+                padding: 1em;
+            }
+
+            #support h1 {
+                width: 100%;
+                text-align: center;
+                color: white;
+            }
+
+            #support p {
+                margin: 2em;
+                color: white;
+                line-height: 2em;
+                text-align: center;
+                font-size: 20px;
+            }
+
+            .fa-github {
+                font-size: 10em;
+                transition: 0.3s;
+                color: white;
+            }
+
+            .fa-github:hover {
+                cursor: pointer;
+                color: #c8c8c8;
+            }
+
+            #support a {
+                color: white;
+            }
+
+            @media only screen and (max-width: 800px) {
+                #about {
+                    padding-left: 50px;
+                    padding-right: 50px;
+                }
+
+                #why {
+                    flex-direction: column;
+                }
+
+                #why-cont {
+                    float: none;
+                    width: 100%;
+                }
+                #why-content {
+                    float: none;
+                    width: 100%;
+                    padding-top: 20px;
+                }
+
+                #team-wrapper {
+                    flex-direction: column;
+                }
+            }
+        </style>
+    
+        <meta name="title" content="High/Low - Home"/>
+        <meta name="description" content="High/Low is an app that helps you find meaning and purpose in every day!"/>
+        <meta name="robots" content="index,follow"/>
+        <meta name="apple-itunes-app" content="app-id=1495271870">
+        
+    </head>
+    <body>
+
+        <!--Start of Tawk.to Script-->
+        <script type="text/javascript">
+        var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+        (function(){
+        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+        s1.async=true;
+        s1.src='https://embed.tawk.to/5d31e08e9b94cd38bbe849b3/default';
+        s1.charset='UTF-8';
+        s1.setAttribute('crossorigin','*');
+        s0.parentNode.insertBefore(s1,s0);
+        })();
         </script>
+        <!--End of Tawk.to Script-->
+
+        <nav class='navbar navbar-expand-lg navbar-light navbar-fixed-top' style='background-color: white;'>
+            <a class='navbar-brand' href='https://gethighlow.com'>
+                <img src='./assets/Logo-light.png' id='nav-logo'>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav mr-auto">
+                  <li class="nav-item active">
+                    <a class="nav-link" href="./test.html">Home <span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="./contact/index.html">Contact</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" target='_blank' href="https://blog.gethighlow.com">Blog</a>
+                  </li>
+                </ul>
+              </div>
+        </nav>
+
+
+        <div id='banner'>
+            
+            <img src='./assets/logo-white.png'/>
+
+            <h1>High/Low</h1>
+            <span>Connection Through Reflection</span>
+            <a href="https://apps.apple.com/us/app/high-low-reflect-each-day/id1495271870?mt=8" style="display:inline-block;overflow:hidden;background:url(https://linkmaker.itunes.apple.com/en-us/badge-lrg.svg?releaseDate=2020-01-20&kind=iossoftware&bubble=ios_apps) no-repeat;width:135px;height:40px;margin: 10px;"></a>
+
+        </div>
+
+        <div id='about'>
+            <h1>About</h1>
+
+            <p>
+                <div id="video-container">
+                    <style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/385701257' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+                </div>
+                <p id='about-content'>
+                <i>The day starts. You get dressed, hop in the car and drive to work. You leave at 4 P.M. in the afternoon, then get back in the car and sit through rush hour traffic. You make a quick dinner, get in bed, and catch a few precious hours of sleep before you have to do it all over again...</i>
+
+That's just a normal day for a lot of people. It's easy to get into what we call The Eeyore mindset: It's just another gloomy day, after all...
+
+But here at High/Low, we believe every day has something special to offer. It just takes a little reflection!
+
+High/Low is an app that encourages you to reflect on every day by thinking about your most favorite and your least favorite thing that happened – a.k.a., your “High” and your “Low”.
+
+Not only can High/Low help you find meaning in every day, it can also help you to stay engaged with the people you love most. With High/Low, you can follow friends and see their Highs and Lows. You'll get to know them better every day! <b>Take that, Eeyore!</b>
+                    
+                </p>
+            </p>
+        </div>
+
+
+        <div id='why'>
+            <div id='why-cont'>
+                <img src='./assets/angled-iphone.png'>
+                
+            </div>
+            <div id='why-content'>
+                <h1>Why High/Low?</h1>
+                <p>
+                    High/Low is different from other social networking apps because, rather than simply providing a way for users to show off the best parts of their lives with each other, it encourages them to actually take the time to reflect on their day, and then share the things that mattered - whether good or bad - with others. It’s not just about connecting to others. It’s about connection through reflection.Besides that, we also are not an advertising company, so we’re not collecting your data in order to sell it to the highest bidder. Your data stays right where you put it. 
+                </p>
+            </div>
+        </div>
+
+        <div id="team">
+            <h1>Meet The Team</h1>
+
+            <div id="team-wrapper">
+
+                <div class="team-member">
+                    <img src="assets/caleb.jpg">
+                    <h3>Caleb Hester</h3>
+                    <p>Senior Software Engineer<br>(Frontend, Backend)</p>
+                </div>
+
+                <div class="team-member">
+                    <img src="assets/sam.JPG">
+                    <h3>Samuel Bever</h3>
+                    <p>Software Engineer, Marketing<br>(Frontend)</p>
+                </div>
+
+                <div class="team-member">
+                    <img src="assets/7E72B8F5-C84A-42A2-B891-B524AFB97D6E.jpeg">
+                    <h3>Emma Hester</h3>
+                    <p>Graphic Designer<br>(Logos and promotional content)</p>
+                </div>
+
+            </div>
+        </div>
+
+
+        <div id="support">
+            <h1>Want to support us?</h1>
+            <p>Feel free to star us on GitHub or follow our blog!</p>
+            <br><a href="https://github.com/highlowapp"><i class="fa fa-lg fa-github"></i></a>
+            <p>Want to do even more? Share this website with your friends: <a href="https://gethighlow.com">https://gethighlow.com</a></p>
+
+        </div>
     </body>
 </html>
